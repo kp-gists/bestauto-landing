@@ -18,18 +18,23 @@ type SendEmailDTO = {
   sender: Mail.Address;
   recipients: Mail.Address[];
   subject: string;
+  clientEmail: string;
   message: string | ReactNode;
   title: string;
 };
 
 export const sendEmail = async (dto: SendEmailDTO) => {
-  const { message, recipients, sender, title, subject } = dto;
+  const { message, recipients, sender, title, clientEmail, subject } = dto;
 
   return await transport.sendMail({
     from: sender,
     to: recipients,
     subject,
-    html: `<h1>${message}</h1>`,
+    html: `<div>
+    <p>${message}</p>
+    <h3>${title}</h3>
+    <h4>${clientEmail}</h4>
+    </div>`,
     text: title,
   });
 };

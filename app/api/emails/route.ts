@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
       recipients,
       subject: body.subject,
       title: `Email from ${body.fullName}`,
+      clientEmail: body.email,
     });
     return NextResponse.json({
       message: 'Email Sent successfully',
