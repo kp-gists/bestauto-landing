@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import Hero from '@/components/landing/Hero';
+import OurServices from '@/components/landing/OurServices';
 
 export default function Home() {
 	const [data, setData] = useState();
@@ -49,31 +50,25 @@ export default function Home() {
 			<div className=' flex flex-col justify-center max-w-7xl mx-auto px-4 gap-4 pt-6'>
 				{/* TODO landing page */}
 				{/* menu bar */}
-				{/* hero img */}
-
-				{/* CTA btns */}
 
 				{/* our services component */}
+				<OurServices />
 				{/* our project */}
 				{/* what we do */}
 
 				{/* work process */}
 
 				{/* blog posts ? */}
-				<h1>
-					asd asd asd asd asd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae incidunt atque, rem iusto exercitationem quo obcaecati quis
-					ratione placeat vitae minima nemo inventore quos quam. Ratione veniam similique quia soluta?
-				</h1>
 
 				<hr />
 
+				<div className='w-36 h-36 rounded-full m-4 bg-red-gradient blur-lg'></div>
+
 				<p className='text-black'>use daisy ui</p>
 				<button className='btn w-fit btn-primary text-white'>Button</button>
-				<div className='flex flex-col'>
+				<div className='flex items-center flex-col'>
 					<h2>Form</h2>
 
-					<ContactForm />
-					<ContactForm />
 					<ContactForm />
 				</div>
 			</div>

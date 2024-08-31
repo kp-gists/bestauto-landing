@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
-import { Poppins, Yantramanav } from 'next/font/google';
 import { cn } from '@/lib/utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import { bestAuto, contacts } from '@/utils/constants';
-
-const yanFont = Yantramanav({ weight: '900', subsets: ['latin'] });
+import { yanFont900 } from '@/lib/fonts';
 
 const Hero = () => {
 	return (
@@ -24,7 +22,7 @@ const Hero = () => {
 					</div>
 					<div className='flex flex-col max-w-md w-full gap-4'>
 						<h1
-							className={cn('text-[54px] text-white leading-tight', yanFont.className)}
+							className={cn('text-[54px] text-white leading-tight', yanFont900.className)}
 							dangerouslySetInnerHTML={{
 								__html: bestAuto.heroSlogan.title,
 							}}
