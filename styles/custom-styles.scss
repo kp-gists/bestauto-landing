@@ -1,0 +1,54 @@
+@import './colors.module.scss';
+
+.hero-2 {
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	&:after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, #171717 0.03%, rgba(23, 23, 23, 0) 99.95%);
+		z-index: -2;
+	}
+	.hero-shape2 {
+		position: absolute;
+		height: 100%;
+		width: 500px;
+		opacity: 0.6;
+		z-index: -1;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			height: calc(100% + 160px);
+			width: 445px;
+			background: linear-gradient(180deg, var(--theme-color) 0%, rgba(232, 9, 46, 0) 100%);
+			opacity: 0.75;
+			transform: skew(30deg, 0deg);
+			top: -160px;
+			left: 326px;
+			z-index: 1;
+		}
+		&:before {
+			background: $theme-color;
+			opacity: 0.26;
+			width: 385px;
+			height: calc(100% + 120px);
+			left: 0px;
+			transform: skew(-31deg, 0deg);
+		}
+		.hero-shape2-2 {
+			position: absolute;
+			width: 300px;
+			height: 279px;
+			background: linear-gradient(180deg, #e8092e 0%, rgba(232, 9, 46, 0) 100%);
+			opacity: 0.76;
+			bottom: 40px;
+			left: 175px;
+			transform: skew(-31deg, 0deg);
+		}
+	}
+}
