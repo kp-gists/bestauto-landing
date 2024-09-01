@@ -42,4 +42,51 @@ export const bestAuto = {
 			img: '/imgs/service-3.png',
 		},
 	],
+	aboutUs: {
+		title: 'BestAuto Care',
+		subtitle: 'know about us',
+		desc: 'At BestAuto Care, we provide top-notch vehicle maintenance and repair services across the UK. Our skilled mechanics are dedicated to keeping your car in peak condition, ensuring safety and reliability on the road. Trust us for efficient, affordable, and professional service every time.',
+	},
+	whatWeDo: {
+		img: '/imgs/what-we-do.png',
+		doing: [
+			{
+				key: 'do-1',
+				title: 'Auto Fixers',
+				icon: '/icons/do-1.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+			{
+				key: 'do-2',
+				title: 'Mechanic Masters',
+				icon: '/icons/do-2.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+			{
+				key: 'do-3',
+				title: 'Car Care Clinic',
+				icon: '/icons/do-3.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+			{
+				key: 'do-4',
+				title: 'Precision Auto Works',
+				icon: '/icons/do-4.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+
+			{
+				key: 'do-5',
+				title: 'Drive-In Garage',
+				icon: '/icons/do-5.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+			{
+				key: 'do-6',
+				title: 'Speedy Auto Repair',
+				icon: '/icons/do-6.svg',
+				desc: 'A car repair is a service provided to fix any issues or damages with y vehicle It involves diagnosing',
+			},
+		],
+	},
 };

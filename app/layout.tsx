@@ -61,7 +61,7 @@ export default function RootLayout({
 			<body className={cn(poppins.className, '')}>
 				<Navbar />
 
-				<div className=' mx-auto h-full bg-white p-0 m-0'>
+				<div className=' w-full mx-auto h-full bg-white p-0 m-0'>
 					{isLoading ? <SplashScreen /> : ''}
 					{children}
 					<Footer />

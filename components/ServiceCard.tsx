@@ -9,7 +9,7 @@ type Props = {
 const ServiceCard = ({ service }: Props) => {
 	return (
 		<div
-			className=' flex flex-col p-4 md:p-10  justify-end rounded-md items-start relative overflow-hidden w-full md:w-[414px] h-[414px] gap-3'
+			className=' flex flex-col p-4 md:p-10  justify-end rounded-md items-start relative overflow-hidden   gap-3'
 			style={{ backgroundImage: `url(${service.img})` }}
 		>
 			<div className='w-16 h-16 md:w-24 md:h-24 z-20 bg-red-500 rounded-xl flex items-center justify-center'>

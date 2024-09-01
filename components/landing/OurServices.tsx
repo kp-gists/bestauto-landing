@@ -9,7 +9,7 @@ type Props = {};
 
 const OurServices = (props: Props) => {
 	return (
-		<div className='flex flex-col justify-center items-center py-4 lg:py-16 gap-5'>
+		<div className='flex flex-col justify-center items-center py-4 lg:py-16 gap-5 max-w-7xl w-full h-full overflow-hidden'>
 			<div className='flex items-center justify-center gap-3'>
 				<div className='bg-red-500 w-10 h-0.5' />
 				<h1 className='text-red-500 uppercase text-lg font-bold'>our services</h1>
@@ -20,7 +20,7 @@ const OurServices = (props: Props) => {
 				Trusted Car Repair <br className='block md:hidden' /> the <br className='hidden md:block' /> Professionals
 			</h2>
 
-			<div className='flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center'>
+			<div className='flex flex-col w-fit  md:flex-row gap-4 md:gap-8 items-center justify-center'>
 				{bestAuto.services.map((service: IService) => (
 					<ServiceCard key={service.key} service={service} />
 				))}

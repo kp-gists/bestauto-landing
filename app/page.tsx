@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import Hero from '@/components/landing/Hero';
 import OurServices from '@/components/landing/OurServices';
+import WhatWeDo from '@/components/WhatWeDo';
 
 export default function Home() {
 	const [data, setData] = useState();
@@ -44,10 +45,10 @@ export default function Home() {
 	};
 
 	return (
-		<>
+		<div className='w-full h-full'>
 			<Hero />
 
-			<div className=' flex flex-col justify-center max-w-7xl mx-auto px-4 gap-4'>
+			<div className=' flex flex-col justify-center max-w-7xl mx-auto  w-full h-full  px-4 gap-4'>
 				{/* TODO landing page */}
 				{/* menu bar */}
 
@@ -55,6 +56,7 @@ export default function Home() {
 				<OurServices />
 				{/* our project */}
 				{/* what we do */}
+				<WhatWeDo />
 
 				{/* work process */}
 
@@ -63,15 +65,15 @@ export default function Home() {
 				<hr />
 
 				<div className='w-36 h-36 rounded-full m-4 bg-red-gradient blur-lg'></div>
-
+				{/* 
 				<p className='text-black'>use daisy ui</p>
 				<button className='btn w-fit btn-primary text-white'>Button</button>
 				<div className='flex items-center flex-col'>
 					<h2>Form</h2>
 
 					<ContactForm />
-				</div>
+				</div> */}
 			</div>
-		</>
+		</div>
 	);
 }
