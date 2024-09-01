@@ -47,7 +47,7 @@ export default function Home() {
 		<>
 			<Hero />
 
-			<div className=' flex flex-col justify-center max-w-7xl mx-auto px-4 gap-4 pt-6'>
+			<div className=' flex flex-col justify-center max-w-7xl mx-auto px-4 gap-4'>
 				{/* TODO landing page */}
 				{/* menu bar */}
 

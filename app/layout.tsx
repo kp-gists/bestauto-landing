@@ -62,7 +62,7 @@ export default function RootLayout({
 				<Navbar />
 
 				<div className=' mx-auto h-full bg-white p-0 m-0'>
-					{isLoading && <SplashScreen />}
+					{isLoading ? <SplashScreen /> : ''}
 					{children}
 					<Footer />
 				</div>
