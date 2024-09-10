@@ -8,6 +8,7 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import Hero from '@/components/landing/Hero';
 import OurServices from '@/components/landing/OurServices';
 import WhatWeDo from '@/components/WhatWeDo';
+import SendRequest from '@/components/SendRequest';
 
 export default function Home() {
 	const [data, setData] = useState();
@@ -55,11 +56,15 @@ export default function Home() {
 				{/* our services component */}
 				<OurServices />
 				{/* our project */}
+				{/* work process */}
+				{/* about us */}
+				{/* stats */}
+
 				{/* what we do */}
 				<WhatWeDo />
 
-				{/* work process */}
-
+				{/* send request for appointment */}
+				<SendRequest />
 				{/* blog posts ? */}
 
 				<hr />

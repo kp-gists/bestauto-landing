@@ -1,9 +1,11 @@
+import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
 	fullName: string;
 	email: string;
-	subject: string;
+	phoneNumber: string;
 	message: string;
 }
 
@@ -15,7 +17,7 @@ const ContactForm: React.FC = () => {
 	const [formData, setFormData] = useState<FormData>({
 		fullName: '',
 		email: '',
-		subject: '',
+		phoneNumber: '',
 		message: '',
 	});
 
@@ -39,7 +41,7 @@ const ContactForm: React.FC = () => {
 			},
 			body: JSON.stringify({
 				email: formData.email,
-				subject: formData.subject,
+				phoneNumber: formData.phoneNumber,
 				fullName: formData.fullName,
 				message: formData.message,
 			}),
@@ -51,64 +53,69 @@ const ContactForm: React.FC = () => {
 				setFormData({
 					fullName: '',
 					email: '',
-					subject: '',
+					phoneNumber: '',
 					message: '',
 				});
 			})
 			.catch((error) => {
 				console.log('🚀 ~ handleSubmit ~ error:', error);
-
 				setIsError(true);
 			})
 			.finally(() => setIsLoading(false));
 	};
 
 	return (
-		<div className='max-w-xl mx-auto mt-10'>
-			<form onSubmit={handleSubmit} className='bg-white w-full shadow-md rounded px-8 pt-6 pb-8 mb-4'>
-				<p className='text-black'>isSuccess:{isSuccess ? 'True' : 'False'}</p>
-				<div className='mb-4'>
-					<label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='fullName'>
-						Full Name
-					</label>
-					<input
-						id='fullName'
-						name='fullName'
-						type='text'
-						value={formData.fullName}
-						onChange={handleChange}
-						className='shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-						placeholder='Full Name'
-						required
-					/>
+		<div className='ml-0 px-4 py-8 md:px-0 md:py-8 md:ml-[150px] max-w-xl w-full'>
+			<form onSubmit={handleSubmit} className='bg-white w-full shadow-md rounded px-8 pt-6 pb-8'>
+				<div className='flex gap-3 items-center mb-4'>
+					<div className='h-0.5 w-8 bg-red-400' /> <p className='text-red-600 uppercase text-base'>Send a request</p>
 				</div>
-				<div className='mb-4'>
-					<label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>
-						Email
-					</label>
-					<input
-						id='email'
-						name='email'
-						type='email'
-						value={formData.email}
-						onChange={handleChange}
-						className='shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-						placeholder='Email'
-						required
-					/>
+
+				<div className='flex flex-col  md:flex-row gap-3 w-full'>
+					<div className='mb-4 w-2/3'>
+						<label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='fullName'>
+							Your Name
+						</label>
+						<input
+							id='fullName'
+							name='fullName'
+							type='text'
+							value={formData.fullName}
+							onChange={handleChange}
+							className='shadow active:outline-purple-500 focus:outline-purple-500 bg-white appearance-none border rounded w-full py-2 px-3 h-12 text-gray-900 leading-tight focus:outline-none focus:shadow-outline'
+							placeholder='Full Name'
+							required
+						/>
+					</div>
+
+					<div className='mb-4 w-full'>
+						<label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>
+							Email
+						</label>
+						<input
+							id='email'
+							name='email'
+							type='email'
+							value={formData.email}
+							onChange={handleChange}
+							className='shadow bg-white appearance-none border rounded w-full py-2 px-3   h-12 text-gray-700 active:outline-purple-500 focus:outline-purple-500 leading-tight focus:outline-none focus:shadow-outline'
+							placeholder='Email'
+							required
+						/>
+					</div>
 				</div>
 				<div className='mb-4'>
 					<label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='subject'>
-						Subject
+						Phone Number
 					</label>
 					<input
-						id='subject'
-						name='subject'
+						id='phoneNumber'
+						name='phoneNumber'
 						type='text'
-						value={formData.subject}
+						value={formData.phoneNumber}
 						onChange={handleChange}
 						className='shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-						placeholder='Subject'
+						placeholder='+44 131 765 4321'
 						required
 					/>
 				</div>
@@ -131,9 +138,10 @@ const ContactForm: React.FC = () => {
 					<button
 						type='submit'
 						disabled={isLoading}
-						className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+						className='bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none leading-loose text-lg focus:shadow-outline hover:scale-y-105 active:translate-x-2 text-center align-middle flex justify-center gap-3 items-center'
 					>
-						Submit
+						Send Message{' '}
+						{isLoading ? <FontAwesomeIcon icon={faSpinner} className='animate-spin w-6 h-6' /> : <FontAwesomeIcon icon={faArrowRight} className='w-6 h-6' />}
 					</button>
 				</div>
 			</form>

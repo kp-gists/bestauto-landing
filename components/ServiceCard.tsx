@@ -25,6 +25,7 @@ const ServiceCard = ({ service }: Props) => {
 			{/* TODO add any actions */}
 		</div>
 	);
+	``;
 };
 
 export default ServiceCard;
