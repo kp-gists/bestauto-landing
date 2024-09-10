@@ -12,6 +12,8 @@ import '../styles/index.scss';
 import { poppins } from '@/lib/fonts';
 import { useEffect, useState } from 'react';
 import SplashScreen from '@/components/SplashScreen';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 config.autoAddCss = false;
 
@@ -66,6 +68,7 @@ export default function RootLayout({
 					{children}
 					<Footer />
 				</div>
+				<ToastContainer />
 			</body>
 		</html>
 	);

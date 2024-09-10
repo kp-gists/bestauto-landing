@@ -1,6 +1,7 @@
 import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 interface FormData {
 	fullName: string;
@@ -48,8 +49,7 @@ const ContactForm: React.FC = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log({ data });
-				setIsSuccess(true);
+				toast.success('Message was sent!');
 				setFormData({
 					fullName: '',
 					email: '',
@@ -59,6 +59,7 @@ const ContactForm: React.FC = () => {
 			})
 			.catch((error) => {
 				console.log('🚀 ~ handleSubmit ~ error:', error);
+				toast.error('Sorry! Message was not sent!');
 				setIsError(true);
 			})
 			.finally(() => setIsLoading(false));
@@ -145,6 +146,7 @@ const ContactForm: React.FC = () => {
 					</button>
 				</div>
 			</form>
+			<ToastContainer />
 		</div>
 	);
 };
