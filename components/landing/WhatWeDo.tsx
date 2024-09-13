@@ -2,8 +2,8 @@ import { yanFont900 } from '@/lib/fonts';
 import { cn } from '@/lib/utility';
 import { bestAuto } from '@/utils/constants';
 import React from 'react';
-import DoCard from './DoCard';
 import Image from 'next/image';
+import DoCard from '../DoCard';
 
 type Props = {};
 

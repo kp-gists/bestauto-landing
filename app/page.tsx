@@ -1,14 +1,12 @@
 'use client';
 
-import ContactForm from '@/components/ContactForm';
 import { useEffect, useState } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import Hero from '@/components/landing/Hero';
 import OurServices from '@/components/landing/OurServices';
-import WhatWeDo from '@/components/WhatWeDo';
 import SendRequest from '@/components/SendRequest';
+import AboutUs from '@/components/landing/AboutUs';
+import WhatWeDo from '@/components/landing/WhatWeDo';
 
 export default function Home() {
 	const [data, setData] = useState();
@@ -53,31 +51,15 @@ export default function Home() {
 				{/* TODO landing page */}
 				{/* menu bar */}
 
-				{/* our services component */}
 				<OurServices />
-				{/* our project */}
-				{/* work process */}
-				{/* about us */}
-				{/* stats */}
+				<AboutUs />
 
 				{/* what we do */}
 				<WhatWeDo />
 
-				{/* send request for appointment */}
 				<SendRequest />
-				{/* blog posts ? */}
 
-				<hr />
-
-				<div className='w-36 h-36 rounded-full m-4 bg-red-gradient blur-lg'></div>
-				{/* 
-				<p className='text-black'>use daisy ui</p>
-				<button className='btn w-fit btn-primary text-white'>Button</button>
-				<div className='flex items-center flex-col'>
-					<h2>Form</h2>
-
-					<ContactForm />
-				</div> */}
+				{/* <div className='w-36 h-36 rounded-full m-4 bg-red-gradient blur-lg'></div> */}
 			</div>
 		</div>
 	);
